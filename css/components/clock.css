@@ -1,0 +1,15 @@
+.clock { display: flex; align-items: baseline; gap: .7rem; line-height: 1; }
+.time {
+  font-size: clamp(56px, 14vw, 112px); font-weight: 700; letter-spacing: -.04em;
+  background: linear-gradient(100deg, var(--purple) 20%, var(--pink) 80%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: shimmer 9s ease-in-out infinite alternate;
+}
+@keyframes shimmer { to { background-position: 100% 0; } }
+.colon { display: inline-block; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .25; transform: translateY(-.04em); } }
+.secs { font-size: clamp(18px, 4vw, 28px); color: var(--line); transition: color .3s; }
+.secs.flash { color: var(--dim); transition: none; }
+.date { margin: .9rem 0 0; color: var(--dim); }

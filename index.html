@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>~</title>
+
+  <!-- Стили: сначала токены и основа, потом компоненты -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components/clock.css">
+  <link rel="stylesheet" href="css/components/greeting.css">
+  <link rel="stylesheet" href="css/components/search.css">
+  <link rel="stylesheet" href="css/components/suggestions.css">
+  <link rel="stylesheet" href="css/components/cards.css">
+</head>
+<body>
+  <div class="orb a" aria-hidden="true"></div>
+  <div class="orb b" aria-hidden="true"></div>
+
+  <main>
+    <div class="clock rise" style="--i:0">
+      <span class="time"><span id="hh">00</span><span class="colon">:</span><span id="mm">00</span></span>
+      <span class="secs" id="ss">00</span>
+    </div>
+    <p class="date rise" style="--i:1" id="date"></p>
+
+    <p class="term-line greeting rise" style="--i:2">
+      <b>$</b> echo <i><span class="typed" id="greeting"></span></i><span class="cursor" aria-hidden="true"></span>
+    </p>
+
+    <form class="search rise" style="--i:3" id="search" autocomplete="off">
+      <label for="q" id="prompt">dev@mac:~$</label>
+      <input id="q" type="text" placeholder="gh react, yt lofi, mdn fetch, habr docker..." autofocus
+             spellcheck="false" autocapitalize="off" role="combobox"
+             aria-expanded="false" aria-controls="sugg" aria-autocomplete="list">
+      <ul class="sugg" id="sugg" role="listbox"></ul>
+    </form>
+    <p class="hint rise" style="--i:4" id="hint"></p>
+
+    <div id="links"></div>
+  </main>
+
+  <!-- Скрипты: порядок важен. Ядро -> настройки -> библиотеки -> провайдеры -> фичи -> запуск -->
+  <script src="js/namespace.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/lib/dom.js"></script>
+  <script src="js/lib/jsonp.js"></script>
+
+  <script src="js/providers/google.js"></script>
+  <script src="js/providers/duckduckgo.js"></script>
+
+  <script src="js/features/clock.js"></script>
+  <script src="js/features/greeting.js"></script>
+  <script src="js/features/links.js"></script>
+  <script src="js/features/search.js"></script>
+  <script src="js/features/suggestions.js"></script>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

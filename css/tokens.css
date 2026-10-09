@@ -1,0 +1,15 @@
+/* Дизайн-токены: единственное место, где живут цвета, шрифты и тайминги. */
+:root {
+  --bg: #282a36;
+  --panel: #303245;
+  --line: #44475a;
+  --fg: #f8f8f2;
+  --dim: #6f7cae;
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --purple: #bd93f9;
+  --font: "JetBrains Mono", "Fira Code", "SF Mono", ui-monospace, Menlo, Monaco, monospace;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}

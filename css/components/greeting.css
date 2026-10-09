@@ -1,0 +1,5 @@
+.greeting { margin: 2rem 0 .6rem; }
+.typed { display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: bottom; max-width: 100%; animation: typing 1.4s steps(var(--n, 20)) .5s both; }
+@keyframes typing { from { width: 0; } to { width: calc(var(--n, 20) * 1ch); } }
+.cursor { display: inline-block; width: .6em; height: 1.1em; margin-left: 2px; border-radius: 2px; background: var(--pink); vertical-align: text-bottom; animation: blink 1.1s ease-in-out infinite; }
+@keyframes blink { 50% { opacity: 0; } }

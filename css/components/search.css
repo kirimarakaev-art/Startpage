@@ -1,0 +1,15 @@
+.search {
+  position: relative; z-index: 10; display: flex; align-items: center; gap: .7rem;
+  margin-top: 1.6rem; padding: .85rem 1.1rem;
+  background: var(--panel); border: 1px solid rgba(255,255,255,.06); border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  transition: border-color .3s, box-shadow .3s, transform .3s var(--ease);
+}
+.search:focus-within { border-color: var(--purple); box-shadow: 0 0 0 4px rgba(189,147,249,.16), 0 10px 30px rgba(0,0,0,.28); transform: translateY(-2px); }
+.search label { color: var(--green); white-space: nowrap; }
+.search input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: var(--fg); font: inherit; caret-color: var(--pink); }
+.search input::placeholder { color: var(--dim); opacity: .7; }
+
+.hint { min-height: 1.6em; margin: .55rem 0 0 .4rem; color: var(--dim); font-size: .85rem; }
+.hint em { color: var(--orange); font-style: normal; display: inline-block; animation: pop .35s var(--ease); }
+@keyframes pop { from { opacity: 0; transform: translateX(-6px); } }

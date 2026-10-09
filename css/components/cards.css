@@ -1,0 +1,26 @@
+.dir { margin: 2rem 0 .8rem .2rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.card {
+  --c: var(--purple);
+  position: relative; overflow: hidden; display: flex; align-items: center; gap: .9rem;
+  padding: .9rem 1rem; text-decoration: none; color: var(--fg);
+  background: var(--panel); border: 1px solid rgba(255,255,255,.06); border-radius: 14px;
+  transition: transform .35s var(--ease), border-color .3s, box-shadow .35s var(--ease);
+}
+.card::after {              /* блик, пробегающий по карточке при наведении */
+  content: ""; position: absolute; inset: 0; transform: translateX(-120%);
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.07) 50%, transparent 65%);
+  transition: transform .8s var(--ease); pointer-events: none;
+}
+.card:hover, .card:focus-visible { outline: 0; transform: translateY(-4px); border-color: var(--c); box-shadow: 0 12px 28px rgba(0,0,0,.35), 0 0 0 1px var(--c); }
+.card:hover::after, .card:focus-visible::after { transform: translateX(120%); }
+.card:active { transform: translateY(-1px) scale(.98); }
+.badge {
+  flex: none; width: 2.5rem; height: 2.5rem; display: grid; place-items: center;
+  border-radius: 11px; background: var(--c); color: var(--bg); font-weight: 700; font-size: 1.1rem;
+  transition: transform .45s var(--ease);
+}
+.card:hover .badge, .card:focus-visible .badge { transform: rotate(-8deg) scale(1.1); }
+.meta { min-width: 0; display: grid; }
+.meta strong { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.meta span { color: var(--dim); font-size: .8rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
